@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wil_Plannet" verbose="2"  >
+	
+<test name="PlanIT Testcases" preserve-order="true" >
+	
+<classes >
+	
+<class name="com.blazedemo.hcode.tests.TestScript">   
+	
+</class>  
+
+ </classes>
+</test>
+
+
+</suite>

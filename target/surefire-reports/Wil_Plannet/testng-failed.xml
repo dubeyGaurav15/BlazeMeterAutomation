@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Wil_Plannet]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="PlanIT Testcases(failed)" verbose="0">
+    <classes>
+      <class name="com.blazedemo.hcode.tests.TestScript">
+        <methods>
+          <include name="generateReport"/>
+          <include name="afterTestThreadContextCleanup"/>
+          <include name="verifyUserisAbleToOrderProduct"/>
+          <include name="logout"/>
+          <include name="setUp"/>
+          <include name="createObject"/>
+          <include name="verifyloginPage"/>
+        </methods>
+      </class> <!-- com.blazedemo.hcode.tests.TestScript -->
+    </classes>
+  </test> <!-- PlanIT Testcases(failed) -->
+</suite> <!-- Failed suite [Wil_Plannet] -->
