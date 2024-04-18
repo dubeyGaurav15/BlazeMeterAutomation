@@ -12,16 +12,16 @@ public class LoginPage extends LoginAndSignupPageOR{
 
 	public void inputUserName(String inputuserName) {
 		driverAction.waitForElement(userName);
-		driverAction.inputData(userName, inputuserName,"UserName");;
+		driverAction.inputData(userName, inputuserName,"UserName");
 	}
 	
 	public void inputPassword(String inputPassword) {
 		driverAction.waitForElement(password);
-		driverAction.inputData(password, inputPassword,"Pasword");;
+		driverAction.inputData(password, inputPassword,"Pasword");
 	}
 	public void loginButton() {
 		
-		driverAction.clickElement(loginButton,true,"Login");;
+		driverAction.clickElement(loginButton,true,"Login");
 	}
 
 
