@@ -9,7 +9,7 @@ import com.blazedemo.hcode.pages.MyCartPage;
 public class TestScript extends BaseTestSuite{
 
 	@Test
-	public void verifyUserisAbleToOrderProduct() {
+	public synchronized void verifyUserisAbleToOrderProduct() {
 
 		HomeLandingPage homePage = new HomeLandingPage(driverAction);
 		homePage.clickOnLaptops();

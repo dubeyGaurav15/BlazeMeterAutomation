@@ -52,7 +52,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.blazedemo.hcode.util.Util;
 import com.google.common.io.Files;
 
 import cucumber.runtime.Timeout;
@@ -103,12 +102,14 @@ public class DriverActions{
 	public void getLocalInstance(String browser) throws Exception {
 
 		if (browser.equalsIgnoreCase("Firefox")) {
-
+			WebDriverManager.firefoxdriver().setup();
+			driver= new FirefoxDriver();
 		} else if (browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
 chromeOptions.addArguments("--headless");
 			chromeOptions.addArguments("--start-fullscreen");
+//			chromeOptions.addArguments("--headless");
 
 			driver= new ChromeDriver(chromeOptions);
 
@@ -346,8 +347,8 @@ chromeOptions.addArguments("--headless");
 		actions.doubleClick(element).build().perform();
 		//		return clickElement(element, true,elementName);
 	}
-	
-	
+
+
 	public boolean clickElement(WebElement element, boolean retry,String elementName) {
 		boolean result = false;
 		if (element != null) {
@@ -364,12 +365,7 @@ chromeOptions.addArguments("--headless");
 				return result;
 			}catch (NoSuchElementException | StaleElementReferenceException f) {
 				String xpath = element.toString().split("xpath:")[1]; 
-				String xPath = xpath.substring(0, xpath.length() - 1);
-				if (retry) {
-					Util.sleepInSec(Util.S_WAIT);
-				} else {
-					f.printStackTrace();
-				}				
+				String xPath = xpath.substring(0, xpath.length() - 1);			
 				return result;
 			} 
 			catch (Exception e) {
@@ -380,7 +376,7 @@ chromeOptions.addArguments("--headless");
 		}
 		return result;
 	}
-		public void clickJavaScript(WebElement element,String elementName) {
+	public void clickJavaScript(WebElement element,String elementName) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		etest.log(Status.INFO, "clicked on"+elementName);
@@ -496,15 +492,15 @@ chromeOptions.addArguments("--headless");
 
 
 	public void navigateBack() {
-		Util.sleepInSec(Util.M_WAIT, "Wait before navigating back");
+
 		driver.navigate().back();
-		Util.sleepInSec(Util.M_WAIT, "Wait for navigating back");
+
 	}
 
 	public void navigateForward() {
-		Util.sleepInSec(Util.M_WAIT, "Wait before navigating forward");
+
 		driver.navigate().forward();
-		Util.sleepInSec(Util.M_WAIT, "Wait for navigating forward");
+
 	}
 
 	public boolean isAlertPresents() {
