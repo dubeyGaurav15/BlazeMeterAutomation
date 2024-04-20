@@ -109,7 +109,7 @@ public class DriverActions{
 			ChromeOptions chromeOptions = new ChromeOptions();
 chromeOptions.addArguments("--headless");
 			chromeOptions.addArguments("--start-fullscreen");
-//			chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("--headless");
 
 			driver= new ChromeDriver(chromeOptions);
 
