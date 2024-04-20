@@ -10,6 +10,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.blazedemo.hcode.json.JsonParser;
 import com.blazedemo.hcode.pages.HomeLandingPage;
@@ -22,6 +23,7 @@ public class BaseTestSuite{
 	protected static DriverActions driverAction ;
 
 	public JSONObject placeOrderdata;
+	public JSONObject contactPagedata;
 
 	@BeforeSuite
 	public void createObject() {
@@ -32,9 +34,10 @@ public class BaseTestSuite{
 
 	
 	@BeforeTest(alwaysRun = true)
-	public void setUp() throws Exception{
-
-		driverAction.getLocalInstance("chrome");
+	@Parameters({"browserName"})
+	public void setUp(String browserName) throws Exception{
+		
+		driverAction.getLocalInstance(browserName);
 		driverAction.openUrl();
 	}
 
@@ -48,6 +51,7 @@ public class BaseTestSuite{
 	public void verifyloginPage(Method tsName) {
 
 		placeOrderdata = JsonParser.parse("placeOrderTestData.json");
+		contactPagedata = JsonParser.parse("contactPageData.json");
 
 		String testCaseName=tsName.getName();
 		driverAction.createTest(testCaseName);
