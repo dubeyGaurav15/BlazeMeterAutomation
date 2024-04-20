@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BlazeDemo" verbose="2"  thread-count="2" parallel="false">
+<suite name="BlazeDemo" verbose="2"  thread-count="2" parallel="classes">
 
 <test name="Blazemeter Demo On chrome" preserve-order="true" >
 	<parameter name="browserName" value="chrome"></parameter>	
