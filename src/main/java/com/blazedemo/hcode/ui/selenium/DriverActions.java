@@ -107,9 +107,9 @@ public class DriverActions{
 		} else if (browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
-chromeOptions.addArguments("--headless");
+//			chromeOptions.addArguments("--headless");
 			chromeOptions.addArguments("--start-fullscreen");
-			chromeOptions.addArguments("--headless");
+
 
 			driver= new ChromeDriver(chromeOptions);
 

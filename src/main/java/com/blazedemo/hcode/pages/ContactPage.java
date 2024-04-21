@@ -21,6 +21,12 @@ public class ContactPage extends ContactPageOR{
 	}
 	public void clickOnSendMessageButton() {
 		driverAction.clickElement(sendMessage, true, "Send Message");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public ContactPage(DriverActions das) {
