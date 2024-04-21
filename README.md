@@ -40,7 +40,7 @@ Under src/test/java:
 ##  Execution:
 
 *   Execute test: 
-    ```mvn test -DsuiteXmlFile=<testng-suit.xml>  -Denvironment=<Environment>```
+    ```mvn test
 *	Possible values for Environment:
 
 ## Here is the  XML file that are being used commonly:
