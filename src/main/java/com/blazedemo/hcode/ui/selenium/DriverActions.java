@@ -19,8 +19,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.ElementNotInteractableException;
@@ -52,10 +50,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.blazedemo.hcode.util.Util;
 import com.google.common.io.Files;
 
-import cucumber.runtime.Timeout;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
@@ -67,7 +63,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverActions{
 
-	protected WebDriver driver;
+	private  WebDriver driver;
 	protected Wait<WebDriver> webDriverWait;
 	private ArrayList<String> tabs;
 	public static final long DEFAULT_WAIT_TIME = 20;
@@ -78,15 +74,7 @@ public class DriverActions{
 	public ExtentTest etest;
 	private Properties prop;
 
-	public DriverActions(WebDriver webDriver) {
-		this.driver = webDriver;
-		actions = new Actions(webDriver);
-		this.webDriverWait = new FluentWait<WebDriver>(driver)                            
-				.withTimeout(Duration.ofSeconds(DEFAULT_WAIT_TIME))          
-				.pollingEvery(Duration.ofSeconds(POOLING_WAIT_TIME))          
-				.ignoring(NoSuchElementException.class);
-	}
-
+	
 
 	public  String openUrl() {
 
@@ -103,12 +91,14 @@ public class DriverActions{
 	public void getLocalInstance(String browser) throws Exception {
 
 		if (browser.equalsIgnoreCase("Firefox")) {
-
+			WebDriverManager.firefoxdriver().setup();
+			driver= new FirefoxDriver();
 		} else if (browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
-
+//			chromeOptions.addArguments("--headless");
 			chromeOptions.addArguments("--start-fullscreen");
+			
 
 			driver= new ChromeDriver(chromeOptions);
 
@@ -346,8 +336,8 @@ public class DriverActions{
 		actions.doubleClick(element).build().perform();
 		//		return clickElement(element, true,elementName);
 	}
-	
-	
+
+
 	public boolean clickElement(WebElement element, boolean retry,String elementName) {
 		boolean result = false;
 		if (element != null) {
@@ -364,12 +354,7 @@ public class DriverActions{
 				return result;
 			}catch (NoSuchElementException | StaleElementReferenceException f) {
 				String xpath = element.toString().split("xpath:")[1]; 
-				String xPath = xpath.substring(0, xpath.length() - 1);
-				if (retry) {
-					Util.sleepInSec(Util.S_WAIT);
-				} else {
-					f.printStackTrace();
-				}				
+				String xPath = xpath.substring(0, xpath.length() - 1);			
 				return result;
 			} 
 			catch (Exception e) {
@@ -380,7 +365,7 @@ public class DriverActions{
 		}
 		return result;
 	}
-		public void clickJavaScript(WebElement element,String elementName) {
+	public void clickJavaScript(WebElement element,String elementName) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		etest.log(Status.INFO, "clicked on"+elementName);
@@ -496,15 +481,15 @@ public class DriverActions{
 
 
 	public void navigateBack() {
-		Util.sleepInSec(Util.M_WAIT, "Wait before navigating back");
+
 		driver.navigate().back();
-		Util.sleepInSec(Util.M_WAIT, "Wait for navigating back");
+
 	}
 
 	public void navigateForward() {
-		Util.sleepInSec(Util.M_WAIT, "Wait before navigating forward");
+
 		driver.navigate().forward();
-		Util.sleepInSec(Util.M_WAIT, "Wait for navigating forward");
+
 	}
 
 	public boolean isAlertPresents() {

@@ -20,12 +20,20 @@ public class HomeLandingPage extends HomeLandingPageOR{
 		driverAction.clickElement(laptops,true,"Laptops");
 
 	}
-	
-	
+
+
 	public void clickOnCartTab() {
 		driverAction.clickElement(cartTab,true,"Cart tab");
 	}
-	
+	public void clickOnContactTab() {
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driverAction.waitForElement(contactTab);
+		driverAction.clickElement(contactTab,true,"Contact tab");
+	}
 	public void clickOnMonitors() {
 
 		driverAction.clickElement(monitors,true,"Monitors");
@@ -36,10 +44,9 @@ public class HomeLandingPage extends HomeLandingPageOR{
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		driverAction.waitForElement(firstProduct);
 		driverAction.clickElement(firstProduct,true,"First Product");
 

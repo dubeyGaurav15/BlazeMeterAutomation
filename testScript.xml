@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Wil_Plannet" verbose="2"  >
-	
-<test name="PlanIT Testcases" preserve-order="true" >
+<suite name="BlazeDemo" verbose="2"  thread-count="2" parallel="false">
+
+<parameter name="browserName" value="chrome"></parameter>	
+<test name="Blazemeter Demo On chrome" preserve-order="true" >
 	
 <classes >
 	
-<class name="com.blazedemo.hcode.tests.TestScript">   
+	<class name="com.blazedemo.hcode.tests.ContactUsPageTestScript"/>  
 	
-</class>  
+    <class name="com.blazedemo.hcode.tests.TestScript"/> 
 
  </classes>
 </test>

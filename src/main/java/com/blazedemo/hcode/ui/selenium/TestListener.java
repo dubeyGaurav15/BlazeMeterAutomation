@@ -4,19 +4,15 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Iterator;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 import org.testng.*;
 import org.testng.annotations.ITestAnnotation;
 
 import com.blazedemo.hcode.core.RetryFailedTests;
 
 public class TestListener extends TestListenerAdapter implements IAnnotationTransformer {
-    public Logger logger = LogManager.getLogger();
     private static final String LOG_4J_Path = "/resources/config/log4j2.xml";
 
     public void onTestStart(ITestResult result) {
-        logger.info("############## STARTING TEST " + result.getName() + " ####################");
     }
 
     static {
@@ -59,7 +55,6 @@ public class TestListener extends TestListenerAdapter implements IAnnotationTran
             ITestResult skipped = skippedTC.next();
             ITestNGMethod skippedMethod = skipped.getMethod();
             if (context.getSkippedTests().getResults(skippedMethod).size() > 0) {
-                logger.info("Removing skipped entry for test case: " + skipped.getName());
                 skippedTC.remove();
             }
         }
