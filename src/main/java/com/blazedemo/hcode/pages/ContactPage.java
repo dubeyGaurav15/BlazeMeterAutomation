@@ -18,6 +18,11 @@ public class ContactPage extends ContactPageOR{
 	}
 	public void inputMessage(String messages) {
 		driverAction.inputData(message, messages, "Contact Name");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	public void clickOnSendMessageButton() {
 		driverAction.clickElement(sendMessage, true, "Send Message");
