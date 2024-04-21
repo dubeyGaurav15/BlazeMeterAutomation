@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="classes" name="Failed suite [BlazeDemo]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="2" parallel="classes" name="Blazemeter Demo On chrome(failed)" verbose="0">
+<suite thread-count="2" name="Failed suite [BlazeDemo]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="2" name="Blazemeter Demo On chrome(failed)" verbose="0">
     <parameter name="browserName" value="chrome"/>
     <classes>
       <class name="com.blazedemo.hcode.tests.TestScript">
@@ -15,17 +15,6 @@
           <include name="verifyloginPage"/>
         </methods>
       </class> <!-- com.blazedemo.hcode.tests.TestScript -->
-      <class name="com.blazedemo.hcode.tests.ContactUsPageTestScript">
-        <methods>
-          <include name="generateReport"/>
-          <include name="afterTestThreadContextCleanup"/>
-          <include name="logout"/>
-          <include name="setUp"/>
-          <include name="verifyContactUsPage"/>
-          <include name="createObject"/>
-          <include name="verifyloginPage"/>
-        </methods>
-      </class> <!-- com.blazedemo.hcode.tests.ContactUsPageTestScript -->
     </classes>
   </test> <!-- Blazemeter Demo On chrome(failed) -->
 </suite> <!-- Failed suite [BlazeDemo] -->

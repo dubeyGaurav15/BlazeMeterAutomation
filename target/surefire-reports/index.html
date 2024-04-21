@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-BlazeDemo" class="navigator-link">
-              <span class="suite-name border-passed">BlazeDemo</span>
+              <span class="suite-name border-skipped">BlazeDemo</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-BlazeDemo" class="navigator-link ">
-                    <span>C:\Users\Jyoti\Downloads\Gaurav\test-automation-framework\test-automation-framework\testScript.xml</span>
+                    <span>C:\Users\Jyoti\Downloads\Gaurav\test-automation-framework\Test\BlazeMeterAutomation\testScript.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods,  1 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-BlazeDemo" class="hide-methods skipped suite-BlazeDemo"> (hide)</a> <!-- hide-methods skipped suite-BlazeDemo -->
+                      <a href="#" panel-name="suite-BlazeDemo" class="show-methods skipped suite-BlazeDemo"> (show)</a> <!-- show-methods skipped suite-BlazeDemo -->
+                    </span>
+                    <div class="method-list-content skipped suite-BlazeDemo">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-BlazeDemo" title="com.blazedemo.hcode.tests.TestScript" class="method navigator-link" hash-for-method="verifyUserisAbleToOrderProduct">verifyUserisAbleToOrderProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-BlazeDemo -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,11 +117,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-BlazeDemo" title="com.blazedemo.hcode.tests.ContactUsPageTestScript" class="method navigator-link" hash-for-method="verifyContactUsPage">verifyContactUsPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BlazeDemo" title="com.blazedemo.hcode.tests.TestScript" class="method navigator-link" hash-for-method="verifyUserisAbleToOrderProduct">verifyUserisAbleToOrderProduct</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-BlazeDemo -->
@@ -122,9 +131,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-BlazeDemo" class="panel BlazeDemo">
-          <div class="suite-BlazeDemo-class-passed">
+          <div class="suite-BlazeDemo-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.blazedemo.hcode.tests.TestScript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -133,10 +142,30 @@
                   <a name="verifyUserisAbleToOrderProduct">
                   </a> <!-- verifyUserisAbleToOrderProduct -->
                   <span class="method-name">verifyUserisAbleToOrderProduct</span>
+                  <div class="stack-trace">org.openqa.selenium.JavascriptException: javascript error: {&quot;status&quot;:60,&quot;value&quot;:&quot;https://www.demoblaze.com/# has no size and location&quot;}
+  (Session info: chrome=123.0.6312.106)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;WILASSETA0140&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.106, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: C:\Users\Jyoti\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55282}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a059044f98cbcfad9c285e87d7a73d52
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:609)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
+	at com.blazedemo.hcode.ui.selenium.DriverActions.clickElement(DriverActions.java:362)
+	at com.blazedemo.hcode.pages.HomeLandingPage.clickOnLoginTab(HomeLandingPage.java:56)
+	at com.blazedemo.hcode.tests.BaseTestSuite.verifyloginPage(BaseTestSuite.java:60)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BlazeDemo-class-passed -->
+          </div> <!-- suite-BlazeDemo-class-skipped -->
           <div class="suite-BlazeDemo-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -155,7 +184,7 @@
         </div> <!-- panel BlazeDemo -->
         <div panel-name="test-xml-BlazeDemo" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Jyoti\Downloads\Gaurav\test-automation-framework\test-automation-framework\testScript.xml</span>
+            <span class="header-content">C:\Users\Jyoti\Downloads\Gaurav\test-automation-framework\Test\BlazeMeterAutomation\testScript.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -208,18 +237,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUserisAbleToOrderProduct')
-data.setCell(0, 2, 'com.blazedemo.hcode.tests.TestScript')
-data.setCell(0, 3, 11884);
+data.setCell(0, 1, 'verifyContactUsPage')
+data.setCell(0, 2, 'com.blazedemo.hcode.tests.ContactUsPageTestScript')
+data.setCell(0, 3, 12550);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyContactUsPage')
-data.setCell(1, 2, 'com.blazedemo.hcode.tests.ContactUsPageTestScript')
-data.setCell(1, 3, 7635);
+data.setCell(1, 1, 'verifyUserisAbleToOrderProduct')
+data.setCell(1, 2, 'com.blazedemo.hcode.tests.TestScript')
+data.setCell(1, 3, 0);
 window.suiteTableData['BlazeDemo']= { tableData: data, tableDiv: 'times-div-BlazeDemo'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-BlazeDemo">
               </div> <!-- times-div-BlazeDemo -->
             </div> <!-- times-div -->
@@ -258,6 +287,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+              <div class="chronological-class-name">com.blazedemo.hcode.tests.TestScript</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyUserisAbleToOrderProduct</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">com.blazedemo.hcode.tests.ContactUsPageTestScript</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">createObject</span>
@@ -265,45 +301,43 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">setUp(chrome)</span>
-                <span class="method-start">96 ms</span>
+                <span class="method-start">84 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">verifyloginPage(public synchronized void com.blazedemo.hcode.tests.ContactUsPageTestScript.verifyContactUsPage())</span>
-                <span class="method-start">3257 ms</span>
+                <span class="method-start">4699 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyContactUsPage</span>
-                <span class="method-start">4154 ms</span>
+                <span class="method-start">5654 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logout([TestResult name=verifyContactUsPage status=SUCCESS method=ContactUsPageTestScript.verifyContactUsPa...)</span>
-                <span class="method-start">11790 ms</span>
+                <span class="method-start">18204 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.blazedemo.hcode.tests.TestScript</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifyloginPage(public synchronized void com.blazedemo.hcode.tests.TestScript.verifyUserisAbleToOrderProduct())</span>
-                <span class="method-start">14550 ms</span>
+                <span class="method-start">19787 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyUserisAbleToOrderProduct</span>
-                <span class="method-start">15360 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">logout([TestResult name=verifyUserisAbleToOrderProduct status=SUCCESS method=TestScript.verifyUserisAbleToO...)</span>
-                <span class="method-start">27244 ms</span>
+                <span class="method-name">logout([TestResult name={null} status=CREATED method=TestScript.verifyUserisAbleToOrderProduct()[pri:0, ins...)</span>
+                <span class="method-start">39909 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.blazedemo.hcode.tests.ContactUsPageTestScript</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">afterTestThreadContextCleanup</span>
-                <span class="method-start">29246 ms</span>
+                <span class="method-start">41267 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">generateReport</span>
-                <span class="method-start">29349 ms</span>
+                <span class="method-start">41471 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
