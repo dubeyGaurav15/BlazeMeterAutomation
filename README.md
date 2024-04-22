@@ -40,8 +40,13 @@ Under src/test/java:
 ##  Execution:
 
 *   Execute test: 
-    ```mvn test
-*	Possible values for Environment:
+    ```mvn clean test
 
 ## Here is the  XML file that are being used commonly:
 *   testng.xml: This XML includes all the  test cases .
+
+## For the Report please refer extantReport folder
+*   report.html: This Report includes all the  test cases .
+*   After running jenkins job you can download the zip file for report and it will be open in browser.
+  
+
